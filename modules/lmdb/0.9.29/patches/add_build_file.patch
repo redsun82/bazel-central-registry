@@ -1,0 +1,21 @@
+diff --git a/BUILD b/BUILD
+new file mode 100644
+index 0000000..5fd108e
+--- /dev/null
++++ b/BUILD
+@@ -0,0 +1,15 @@
++codeql_cc_library(
++    name = "lmdb",
++    srcs = [
++        "mdb.c",
++        "midl.c",
++        "midl.h",
++    ],
++    hdrs = ["lmdb.h"],
++    copts = on_posix({
++        "@platforms//os:windows": [],
++        "//conditions:default": ["-std=c11"],
++    }),
++    defines = ["MDB_VL32"],
++    visibility = ["//visibility:public"],
++)

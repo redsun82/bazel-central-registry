@@ -1,0 +1,4 @@
+module(
+    name = "lmdb",
+    version = "0.9.29",
+)
